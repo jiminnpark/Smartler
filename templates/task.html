@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Smartler</title>
+	
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+	<link rel="stylesheet" href="static/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="static/css/magnific-popup.css"/>
+	<link rel="stylesheet" type="text/css" href="static/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="static/slick/slick-theme.css"/>
+	<link rel="stylesheet" href="static/css/tooplate-style.css">
+
+	<script>
+		var renderPage = true;
+
+	if(navigator.userAgent.indexOf('MSIE')!==-1
+		|| navigator.appVersion.indexOf('Trident/') > 0){
+   		/* Microsoft Internet Explorer detected in. */
+   		alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+   		renderPage = false;
+	}
+	</script>
+	<style>
+		/*	GLOWING BUTTON RADIO*/
+		@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+@font-face {
+  font-family: 'ModernPictogramsNormal';
+  src: url("http://s202540075.onlinehome.us/codepen/fonts/modernpics-webfont.eot");
+  src: url("http://s202540075.onlinehome.us/codepen/fonts/modernpics-webfont.eot?#iefix") format("embedded-opentype"), url("http://s202540075.onlinehome.us/codepen/fonts/modernpics-webfont.woff") format("woff"), url("http://s202540075.onlinehome.us/codepen/fonts/modernpics-webfont.ttf") format("truetype"), url("http://s202540075.onlinehome.us/codepen/fonts/modernpics-webfont.svg#ModernPictogramsNormal")
+  format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+a, input[type='radio'] + label {
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+fieldset {
+  border: 1px solid #222;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  margin: 20px 0 0 0;
+  min-height: 90px;
+  line-height: 90px;
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  padding: 20px;
+}
+fieldset h2 {
+  font-family: 'Lobster', cursive;
+  font-weight: normal;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
+  display: inline-block;
+  margin: 0;
+  line-height: 1.5;
+  position: absolute;
+  top: -20px;
+  background: url("http://www.bradysammons.com/codepen/darkui/noise.png") repeat;
+  padding: 0 5px 0 10px;
+}
+
+input[type='radio'] {
+  display: none;
+}
+a.glowBtn, input[type='radio'] + label {
+  z-index: 10;
+  margin: 0 10px 10px 0;
+  width: 115.5px;
+  height: 37.29px;
+  line-height: 36.3px;
+  position: relative;
+  font-size: 13.2px;
+  letter-spacing: .1em;
+  color: #0e0e0e;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  font-weight: bold;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzExMTExMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #111111), color-stop(100%, #000000));
+  background-image: -moz-linear-gradient(#111111, #000000);
+  background-image: -webkit-linear-gradient(#111111, #000000);
+  background-image: linear-gradient(#111111, #000000);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 3px rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 3px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+a.glowBtn:after, input[type='radio'] + label:after {
+  z-index: -1;
+  content: '';
+  cursor: pointer;
+  top: 1.98px;
+  margin-left: 50%;
+  left: -55px;
+  width: 110px;
+  height: 33px;
+  display: block;
+  position: absolute;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ0NDQ0NCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzM3MzczOCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #444444), color-stop(100%, #373738));
+  background-image: -moz-linear-gradient(#444444, #373738);
+  background-image: -webkit-linear-gradient(#444444, #373738);
+  background-image: linear-gradient(#444444, #373738);
+  -moz-box-shadow: inset 0 2px 1px -1px rgba(255, 255, 255, 0.2), inset 0 -2px 1px -1px rgba(0, 0, 0, 0.2), 0 12px 12px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 2px 1px -1px rgba(255, 255, 255, 0.2), inset 0 -2px 1px -1px rgba(0, 0, 0, 0.2), 0 12px 12px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 2px 1px -1px rgba(255, 255, 255, 0.2), inset 0 -2px 1px -1px rgba(0, 0, 0, 0.2), 0 12px 12px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(0, 0, 0, 0.3);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+/* -------------------
+	Hover States
+-------------------- */
+a.glowBtn:hover, a.hover, input[type='radio'] + label:hover {
+  color: #AEAEAE;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+}
+
+a.glowBtn:hover:after, a.hover:after, input[type='radio'] + label:hover:after {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU0NTQ1NCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzM3MzczOCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #545454), color-stop(100%, #373738));
+  background-image: -moz-linear-gradient(#545454, #373738);
+  background-image: -webkit-linear-gradient(#545454, #373738);
+  background-image: linear-gradient(#545454, #373738);
+}
+
+a.glowBtn:active, a.active, a.active:hover, input[type='radio']:checked + label {
+  color: #00ccff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3), 0 0px 30px rgba(0, 255, 255, 0.7);
+  -moz-box-shadow: 0 -1px 0 rgba(0, 193, 255, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 20px rgba(0, 193, 255, 0.1), 0 0 30px rgba(0, 193, 255, 0.1);
+  -webkit-box-shadow: 0 -1px 0 rgba(0, 193, 255, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 20px rgba(0, 193, 255, 0.1), 0 0 30px rgba(0, 193, 255, 0.1);
+  box-shadow: 0 -1px 0 rgba(0, 193, 255, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 20px rgba(0, 193, 255, 0.1), 0 0 30px rgba(0, 193, 255, 0.1);
+}
+
+a.glowBtn:active, a.active, a.active:hover {
+  text-shadow: 0 -1px 0 black, 0 0px 30px cyan, 0 0px 50px cyan;
+}
+
+a.glowBtn:active:after, a.active:after, a.active:hover:after, input[type='radio']:checked + label:after {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI2MjYyNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJkMmQyZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #262627), color-stop(100%, #2d2d2e));
+  background-image: -moz-linear-gradient(#262627, #2d2d2e);
+  background-image: -webkit-linear-gradient(#262627, #2d2d2e);
+  background-image: linear-gradient(#262627, #2d2d2e);
+  -moz-box-shadow: inset 0 5px 6px rgba(0, 0, 0, 0.3), inset 0 0 4px rgba(0, 0, 0, 0.9), 0 0 0 black;
+  -webkit-box-shadow: inset 0 5px 6px rgba(0, 0, 0, 0.3), inset 0 0 4px rgba(0, 0, 0, 0.9), 0 0 0 black;
+  box-shadow: inset 0 5px 6px rgba(0, 0, 0, 0.3), inset 0 0 4px rgba(0, 0, 0, 0.9), 0 0 0 black;
+}
+	</style>
+</head>
+
+<body>
+	<!-- Loader -->
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+	</div>
+	
+	<!-- Page Content -->
+	<div class="container-fluid tm-main">
+		<div class="row tm-main-row">
+
+			<!-- Sidebar -->
+			<div id="tmSideBar" class="col-xl-3 col-lg-4 col-md-12 col-sm-12 sidebar">
+
+				<button id="tmMainNavToggle" class="menu-icon">&#9776;</button>
+
+				<div class="inner">
+					<nav id="tmMainNav" class="tm-main-nav">
+						<ul>
+							<li>
+								<a href="/" id="tmNavLink1" class="scrolly" data-bg-img="constructive_bg_05.jpg" data-page="#tm-section-1">
+									<i class="fas fa-home tm-nav-fa-icon"></i>
+									<span>Go Home</span>
+								</a>
+							</li>	
+							<li>
+								<a href="#schedular" id="tmNavLink2" class="scrolly active" data-bg-img="constructive_bg_06.jpg" data-page="#tm-section-2">
+									<i class="fas fa-home tm-nav-fa-icon"></i>
+									<span>Tasks</span>
+								</a>
+							</li>						
+							<li>
+								<a href="#instructions" id="tmNavLink3" class="scrolly" data-bg-img="constructive_bg_07.jpg" data-page="#tm-section-3">
+									<i class="fas fa-users tm-nav-fa-icon"></i>
+									<span>Instructions</span>
+								</a>
+							</li>
+							<li>
+								<a href="#contact" id="tmNavLink4" class="scrolly" data-bg-img="constructive_bg_08.jpg" data-page="#tm-section-4">
+									<i class="fas fa-comments tm-nav-fa-icon"></i>
+									<span>About</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+
+			<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
+
+					<!-- section 1 -->
+					<section id="tm-section-1" class="tm-section">
+						<div class="ml-auto">
+							<a type="button" class="btn tm-btn tm-font-big" onclick="location.href='/'" >Start Over</a> 
+
+
+							<!-- data-nav-link holds the ID of nav item, which means this link should behave the same as that nav item  -->
+						</div>
+					</section>
+
+					<!-- section 2 -->
+					<section id="tm-section-2" class="tm-section">
+						<div>
+							<header class="mb-4"><h2 class="tm-text-shadow">Tasks</h2></header>	
+							{{alert|safe}}	            
+							<div class="tm-bg-transparent-black tm-contact-box-pad">
+									<div class=" form-row">
+									
+											<div class="form-group col-lg-12">
+												<p class="mb-5 tm-font-big"><input id="add_task" class="form-control"  placeholder="Your Task Name" ></p>
+											</div>
+											 
+											 <div  id="rate_task" class="form-group row">
+												<input type="radio" id="5-stars" name="rating" value="5" />
+												<label for="5-stars" class="star">1</label>
+												<input type="radio" id="4-stars" name="rating" value="4" />
+												<label for="4-stars" class="star">2</label>
+												<input type="radio" id="3-stars" name="rating" value="3" />
+												<label for="3-stars" class="star">3</label>
+												<input type="radio" id="2-stars" name="rating" value="2" />
+												<label for="2-stars" class="star">4</label>
+												<input type="radio" id="1-star" name="rating" value="1" />
+												<label for="1-star" class="star">5</label>
+											  </div>
+											  <br><br>
+											  <div class="form-group col-lg-4">
+												<a type="button" class="btn tm-btn tm-font-big" onclick="additems()" >Add Task</a> 
+											  </div>
+
+											  
+											  <div class="form-group col-lg-4">
+											  </div>
+											  <div class="form-group col-lg-4">
+												<form method="post" action="" id="formid">
+													{% csrf_token %}
+													<input type="time" id="start_task" name="start_task" value="{{start_task}}" style="display:none"> 
+													<input type="time" id="end_task" name="end_task" value="{{end_task}}" style="display:none">
+													 <input type="text" id="info" style="display:none" name="no_of_tasks">
+													 <a  type="button" id="submitbtn" onclick="createinput()" class="btn tm-btn tm-font-big">Done</a>	 
+												   </form>
+											  </div>
+											 
+										</div>
+								
+									
+							</div>
+							
+						</div>  
+						<br>
+						<div class="media tm-bg-transparent-black">
+							<div class="media-body">
+								<h4>Your Tasks</h4>
+								<ul id="ul_task">
+								</ul>
+							</div>
+						</div> <br>
+					</section>
+
+					<!-- section 3 -->
+					<section id="tm-section-3" class="tm-section">						
+						<div class="row mb-4">
+							<header class="col-xl-12"><h2 class="tm-text-shadow">Instructions</h2></header>		
+						</div>
+						<div class="row" style="text-shadow: 2px 2px 6px black;">
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-clock tm-icon-circled tm-icon-media"></i>
+									<div class="media-body">
+										<h3>Start-End of the Day</h3>
+										<b><p>You have to specify the <b>Start</b> and <b>End</b> time of your day so that we can move forward!</p></b>	
+									</div>
+								</div>
+							</div>	
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-tasks mr-4 tm-icon-circled tm-icon-media"></i>	
+									<div class="media-body">
+										<h3>Tasks</h3>
+										<b><p>You have to specify the name of your Tasks that you want us to add in your schedule!</p></b>	
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-utensils mr-4 tm-icon-circled tm-icon-media"></i>
+									<div class="media-body">
+										<h3>Fixed Tasks</h3>
+										<b><p>Here you have to tell us some of your Fixed tasks (ex- Lunch, Gym, Dinner, Family time, Movie time, etc) to be included in Schedule!</p></b>		
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-calendar-check mr-4 tm-icon-circled tm-icon-media"></i>
+									<div class="media-body">
+										<h3>Schedular Result</h3>
+										<b><p>Finally, the algorithm calculates the personalised schedule based on your the Tasks you have specified as well as the Start and the End of the Day</p></b>	
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-star mr-4 tm-icon-circled tm-icon-media"></i>
+									<div class="media-body">
+										<h3>Please remember..</h3>
+										<b>The Freetime is added for the sake of your convenience so that your schedule dont overfit, It can also be used as expanded time for previous Task; it has been added considering that your previous Task might be pending!</b><br><br>
+										<b>The Algorithm may not work if:</b>
+										<ul>
+											<li>You have specified invalid Start and End of the Day.</li>
+											<li>You have added invalid time for Fixed tasks.</li>
+											<li>You have repeated the Tasks.</li>
+										</ul>
+									</div>
+								</div>
+							</div>			          		
+						</div>						               
+					</section>
+
+					<!-- section 4 -->
+					<section id="tm-section-4" class="tm-section">
+						<div class="tm-bg-transparent-black tm-contact-box-pad">
+							<div class="row mb-4">
+								<div class="col-sm-12">
+									<header><h2 class="tm-text-shadow">About Us</h2></header>
+								</div>
+							</div>
+							<div class="row tm-page-4-content">
+								<div class="col-md-6 col-sm-12 tm-contact-col">
+									Schedular Algorithm: <br>Version: V2.0.1 <br>
+									Email: <a href="mailto:shivanshusurya192@gmail.com">shivanshusurya192@gmail.com</a><br>
+									Github:<br> <a href="www.github.com/jiminnpark">www.github.io/jiminnpark</a><br>
+
+								</div>
+								<div class="col-md-6 col-sm-12 tm-contact-col">
+									<b>Found a bug?</b>
+									<br>Please let us know in the email address given below</br>
+									<a href="mailto:shivanshusurya192@gmail.com">shivanshusurya192@gmail.com</a>
+								</div>
+							</div>
+						</div>
+					</section>					
+				</div>	<!-- .tm-content -->							
+				<footer class="footer-link">
+					<p>&copy shivanshusurya192@gmail.com</p>
+				</footer>
+			</div>	<!-- row -->			
+		</div>
+		<div id="preload-01"></div>
+		<div id="preload-02"></div>
+		<div id="preload-03"></div>
+		<div id="preload-04"></div>
+
+		<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="static/js/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src="static/js/jquery.backstretch.min.js"></script>
+		<script type="text/javascript" src="static/slick/slick.min.js"></script> <!-- Slick Carousel -->
+
+
+		<script>
+			let lid=0;
+			function createinput()
+			{
+		
+			var ul1=document.getElementById("ul_task");
+			var lst1=ul1.getElementsByTagName("LI");
+			var fm=document.getElementById("formid");
+			var start=document.getElementById("start_task");
+			var end=document.getElementById("end_task");
+			var ipchild=fm.children;
+			if(start.value=="" || end.value=="")
+			  {
+				 alert("Please check if you have Entered Start/End of your Day!");
+			  }
+			else if(parseInt(start.value)>12 && parseInt(end.value)<12)
+			{
+				alert("We have currently not implemented Night schedule,Till then you can specify AM instead of PM to get the similar result!");
+			}
+			else if(parseInt(start.value)>parseInt(end.value))
+			{
+				alert("Please specify a Valid time interval for the Task!");
+			}
+		   else
+			  {
+				 while(ipchild[4]!=undefined)
+				 {
+					ipchild[4].remove();
+				 }
+				 var tasklist=[];
+				 for(var i=0;i<lst1.length;i++)
+				 {
+					var ip=document.createElement("input");
+					ip.name="task_"+i;
+					ip.value=lst1[i].innerText;
+					ip.style.display="none";
+					fm.append(ip);
+					tasklist.push(lst1[i].innerText);
+				 }
+				 document.getElementById("info").value=parseInt(ul1.getElementsByTagName("LI").length);
+				 fm.submit();				 
+				 
+			  }
+				
+			}
+		
+			
+			function additems()
+			{
+			var ul=document.getElementById("ul_task");
+			var x=document.getElementById("rate_task");
+			var rate;
+			var flag=1;
+			for(var i=0;i<5;i++)
+			{
+			  if(x.getElementsByTagName("input")[i].checked)
+			  {
+				 rate=parseInt(i)+1;
+				 flag=0;
+				 continue;
+			  }
+			}
+			if(document.getElementById("add_task").value=="")
+			{
+				alert("Dont be shy! Tell us your Task name");
+			}
+			else if(flag)
+			{
+			   alert("Please rate the task based on its importance!");
+			   
+			}
+			else
+			{
+			  var info=document.getElementById("info");
+				if(info.value!="")
+				{
+				info.value=parseInt(ul.getElementsByTagName("LI").length)+1;
+				}
+				else
+				{ 
+					info.value=1;
+				}
+					var l=document.createElement("div");
+					var listid="task#"+lid;
+					l.style.display="flex";
+					l.style.color="black";
+					l.style.textShadow="2px 1px 4px white";
+					lid++;       
+					l.innerHTML="<li id="+listid+" style='font-weight:bold'>"+document.getElementById('add_task').value+"("+rate+")</li>"+"&nbsp <a type='button'  onclick='remove("+'"'+listid+'"'+")'><i class='fa fa-window-close'></i></a>";
+					ul.append(l);
+				}
+			
+			}
+		
+	
+			function remove(listid)
+			  {
+				document.getElementById(listid).parentNode.remove();
+			  }
+			
+		
+		</script>
+
+		<script>
+
+            var sidebarVisible = false;
+            var currentPageID = "#tm-section-2";
+    
+            // Setup Carousel
+            function setupCarousel() {
+    
+                // If current page isn't Carousel page, don't do anything.
+                if($('#tm-section-2').css('display') == "none") {
+                }
+                else {	// If current page is Carousel page, set up the Carousel.
+    
+                    var slider = $('.tm-img-slider');
+                    var windowWidth = $(window).width();
+    
+                    if (slider.hasClass('slick-initialized')) {
+                        slider.slick('destroy');
+                    }
+    
+                    if(windowWidth < 640) {
+                        slider.slick({
+                              dots: true,
+                              infinite: false,
+                              slidesToShow: 1,
+                              slidesToScroll: 1
+                          });
+                    }
+                    else if(windowWidth < 992) {
+                        slider.slick({
+                              dots: true,
+                              infinite: false,
+                              slidesToShow: 2,
+                              slidesToScroll: 1
+                          });
+                    }
+                    else {
+                        // Slick carousel
+                          slider.slick({
+                              dots: true,
+                              infinite: false,
+                              slidesToShow: 3,
+                              slidesToScroll: 2
+                          });
+                    }
+    
+                    // Init Magnific Popup
+                    $('.tm-img-slider').magnificPopup({
+                      delegate: 'a', // child items selector, by clicking on it popup will open
+                      type: 'image',
+                      gallery: {enabled:true}
+                      // other options
+                    });
+                  }
+              }
+    
+              // Setup Nav
+              function setupNav() {
+                  // Add Event Listener to each Nav item
+                 $(".tm-main-nav a").click(function(e){
+                     e.preventDefault();
+                    
+                    var currentNavItem = $(this);
+                    changePage(currentNavItem);
+                    
+                    setupCarousel();
+                    setupFooter();
+    
+                    // Hide the nav on mobile
+                    $("#tmSideBar").removeClass("show");
+                });	    
+              }
+    
+              function changePage(currentNavItem) {
+                  // Update Nav items
+                  $(".tm-main-nav a").removeClass("active");
+                 currentNavItem.addClass("active");
+    
+                $(currentPageID).hide();
+    
+                // Show current page
+                currentPageID = currentNavItem.data("page");
+                $(currentPageID).fadeIn(1000);
+    
+                // Change background image
+                var bgImg = currentNavItem.data("bgImg");
+                $.backstretch("static/img/" + bgImg);		    	
+              }
+    
+              // Setup Nav Toggle Button
+              function setupNavToggle() {
+    
+                $("#tmMainNavToggle").on("click", function(){
+                    $(".sidebar").toggleClass("show");
+                });
+              }
+    
+              // If there is enough room, stick the footer at the bottom of page content.
+              // If not, place it after the page content
+              function setupFooter() {
+                  
+                  var padding = 100;
+                  var footerPadding = 40;
+                  var mainContent = $("section"+currentPageID);
+                  var mainContentHeight = mainContent.outerHeight(true);
+                  var footer = $(".footer-link");
+                  var footerHeight = footer.outerHeight(true);
+                  var totalPageHeight = mainContentHeight + footerHeight + footerPadding + padding;
+                  var windowHeight = $(window).height();		
+    
+                  if(totalPageHeight > windowHeight){
+                      $(".tm-content").css("margin-bottom", footerHeight + footerPadding + "px");
+                      footer.css("bottom", footerHeight + "px");  			
+                  }
+                  else {
+                      $(".tm-content").css("margin-bottom", "0");
+                      footer.css("bottom", "20px");  				
+                  }  			
+              }
+    
+              // Everything is loaded including images.
+              $(window).on("load", function(){
+    
+                  // Render the page on modern browser only.
+                  if(renderPage) {
+                    // Remove loader
+                      $('body').addClass('loaded');
+    
+                      // Page transition
+                      var allPages = $(".tm-section");
+    
+                      // Handle click of "Continue", which changes to next page
+                      // The link contains data-nav-link attribute, which holds the nav item ID
+                      // Nav item ID is then used to access and trigger click on the corresponding nav item
+                      var linkToAnotherPage = $("a.tm-btn[data-nav-link]");
+                    
+                    if(linkToAnotherPage != null) {
+                        
+                        linkToAnotherPage.on("click", function(){
+                            var navItemToHighlight = linkToAnotherPage.data("navLink");
+                            $("a" + navItemToHighlight).click();
+                        });
+                    }
+                      
+                      // Hide all pages
+                      allPages.hide();
+    
+                      $("#tm-section-2").fadeIn();
+    
+                     // Set up background first page
+                     var bgImg = $("#tmNavLink2").data("bgImg");
+                     
+                     $.backstretch("static/img/" + bgImg, {fade: 500});
+    
+                     // Setup Carousel, Nav, and Nav Toggle
+                    setupCarousel();
+                    setupNav();
+                    setupNavToggle();
+                    setupFooter();
+    
+                    // Resize Carousel upon window resize
+                    $(window).resize(function() {
+                        setupCarousel();
+                        setupFooter();
+                    });
+                  }	      	
+            });
+    
+            </script>
+        </body>
+    </html>

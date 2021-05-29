@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedular</title>
+    <script>
+    function createinput()
+    {
+
+    var ul=document.getElementById("ul");
+    var lst=ul.getElementsByTagName("LI");
+    var fm=document.getElementById("formid");
+    var ipchild=fm.children;
+    while(ipchild[3]!=undefined)
+    {
+    ipchild[3].remove();
+    }
+    var info=document.createElement("input");
+    info.value=lst.length;
+    info.name="no_of_tasks";
+    info.style.display="none";
+    fm.append(info);
+    for(var i=0;i<lst.length;i++)
+    {
+    var ip=document.createElement("input");
+    ip.name="task_"+i;
+    ip.value=lst[i].innerText;
+    ip.style.display="none";
+    fm.append(ip);
+    }
+
+    }
+
+</script>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+      <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+      <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css'>
+      <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" href="static/todo.css">
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script  src="static/todo.js"></script>
+
+</head>
+<body class="body">
+<div class="container">
+            <div class="today"></div>
+            <div class="row">
+               <div class="col-md-4 col-md-offset-4 col-xs-6 col-xs-offset-3">
+                  <div class="add-control">
+                     <div class="form-group has-feedback">
+                        <input type="text" class="form-control" placeholder="Add your Task"/>
+                        <i class="fa fa-plus form-control-feedback add-btn" title="Add your Task"></i>
+                     </div>
+                  </div>
+                  <p class="err text-danger text-center hidden"><i class="fa fa-warning"></i> Oops! Please, Enter task name</p>
+                  <p class="no-items text-muted text-center hidden"><i class="fa fa-ban"></i></p>
+                  <ul class="todo-list">
+                      <li class="animated flipInX">
+                          <div class="checkbox"><span class="close"><i class="fa fa-times"></i></span><label><input type="checkbox" style="display:none">
+                          this is shiva</label></div>
+                      </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+</body>
+</html>
+<!--<ul id="ul">-->
+<!--    <li>Task 1</li>-->
+<!--    <li>Task 2</li>-->
+<!--    <li>Task 3</li>-->
+<!--</ul>-->
+<!--<form method="post" action="" id="formid" onsubmit="createinput();">-->
+<!--    {% csrf_token %}-->
+<!--    <input type="time" name="task">-->
+<!--    <button type="submit"  id="submitbtn" onclick="createinput();"> Submit</button>-->
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->

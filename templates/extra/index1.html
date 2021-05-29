@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedular</title>
+</head>
+<style>
+    :root {
+  --blue: #74abea;
+  --red: #f5766b;
+  --pink: #e55ebf;
+  --shadow: rgba(0, 0, 0, 0.25);
+}
+
+html,
+body {
+  overflow: hidden;
+  background: #ce749e;
+}
+
+@keyframes boxMove {
+  0% {
+    transform: scale(var(--initialScale)) rotate(var(--initialAngle));
+  }
+  100% {
+    transform: scale(var(--endScale)) rotate(var(--endAngle));
+  }
+}
+
+.box {
+  top: calc(50% - 10vmin);
+  left: calc(50% - 10vmin);
+  width: 20vmin;
+  height: 20vmin;
+  position: fixed;
+  background-color: var(--pink);
+  background-image: radial-gradient(
+      circle at 50% 10%,
+      var(--blue) 5%,
+      transparent 80%
+    ),
+    radial-gradient(circle at 50% 90%, var(--red) 25%, transparent);
+  border-radius: 3vmin;
+  box-shadow: 0 0 6vmin var(--shadow);
+  animation: boxMove 4s linear infinite;
+}
+
+.box0 {
+  --initialScale: 0.3;
+  --endScale: 1;
+  --initialAngle: +10deg;
+  --endAngle: +00deg;
+}
+.box1 {
+  --initialScale: 1;
+  --endScale: 1.5;
+  --initialAngle: +00deg;
+  --endAngle: -10deg;
+}
+.box2 {
+  --initialScale: 1.5;
+  --endScale: 2;
+  --initialAngle: -10deg;
+  --endAngle: -20deg;
+}
+.box3 {
+  --initialScale: 2;
+  --endScale: 3;
+  --initialAngle: -20deg;
+  --endAngle: -25deg;
+}
+.box4 {
+  --initialScale: 3;
+  --endScale: 4;
+  --initialAngle: -25deg;
+  --endAngle: -30deg;
+}
+.box5 {
+  --initialScale: 4;
+  --endScale: 5;
+  --initialAngle: -30deg;
+  --endAngle: -40deg;
+}
+.box6 {
+  --initialScale: 5;
+  --endScale: 6.5;
+  --initialAngle: -40deg;
+  --endAngle: -50deg;
+}
+.box7 {
+  --initialScale: 6.5;
+  --endScale: 8;
+  --initialAngle: -50deg;
+  --endAngle: -60deg;
+}
+.box8 {
+  --initialScale: 8;
+  --endScale: 10;
+  --initialAngle: -60deg;
+  --endAngle: -70deg;
+}
+.box9 {
+  --initialScale: 10;
+  --endScale: 14;
+  --initialAngle: -70deg;
+  --endAngle: -85deg;
+}
+.box10 {
+  --initialScale: 14;
+  --endScale: 20;
+  --initialAngle: -85deg;
+  --endAngle: -99deg;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.box0 {
+  animation: boxMove 4s linear infinite, show 4s linear infinite;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12vmin;
+  font-family: "Varela Round", Arial, sans-serif;
+  transform: translate(-50%, -50%);
+}
+
+.title::before {
+  display: block;
+  position: absolute;
+  width: 10vmin;
+  height: 8.25vmin;
+  top: 45%;
+  border-radius: 50%;
+  box-shadow: 0 2vmin 0 -0.75vmin;
+}
+.star-rating {
+  border:solid 1px #ccc;
+  display:flex;
+  flex-direction: row-reverse;
+  font-size:1.5em;
+  justify-content:space-around;
+  padding:0 .2em;
+  text-align:center;
+  width:5em;
+}
+
+.star-rating input {
+  display:none;
+}
+
+.star-rating label {
+  color:#ccc;
+  cursor:pointer;
+}
+
+.star-rating :checked ~ label {
+  color:#f90;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color:#fc0;
+}
+
+
+</style>
+<body>
+<script>
+    function createinput()
+    {
+
+    var ul1=document.getElementById("ul_task");
+    var ul2=document.getElementById("ul_fix");
+    var lst1=ul1.getElementsByTagName("LI");
+    var lst2=ul2.getElementsByTagName("LI");
+    var fm=document.getElementById("formid");
+    var start=document.getElementById("start_task");
+    var end=document.getElementById("end_task");
+    var ipchild=fm.children;
+    if(start.value=="" || end.value=="")
+      {
+         alert("Please check if you have Entered Start/End of your Day!");
+      }
+   else
+      {
+         while(ipchild[11]!=undefined)
+         {
+            ipchild[11].remove();
+         }
+         for(var i=0;i<lst1.length;i++)
+         {
+            var ip=document.createElement("input");
+            ip.name="task_"+i;
+            ip.value=lst1[i].innerText;
+            ip.style.display="none";
+            fm.append(ip);
+         }
+         for(var i=0;i<lst2.length;i++)
+         {
+            var ip=document.createElement("input");
+            ip.name="fix_"+i;
+            ip.value=lst2[i].innerText;
+            ip.style.display="none";
+            fm.append(ip);
+         }
+      }
+        
+    }
+
+    
+    function additems()
+    {
+    var ul=document.getElementById("ul_task");
+    var x=document.getElementById("rate_task");
+    var rate;
+    var flag=1;
+    for(var i=0;i<5;i++)
+    {
+      if(x.getElementsByTagName("input")[i].checked)
+      {
+         rate=5-parseInt(i);
+         flag=0;
+         continue;
+      }
+    }
+    if(flag)
+    {
+       alert("Please rate the task based on its importance!");
+       
+    }
+    else
+    {
+      var info=document.getElementById("info");
+        if(info.value!="")
+        {
+        info.value=parseInt(info.value)+1;
+        }
+        else{ info.value=1;}
+      var l=document.createElement("li");
+      l.innerText=document.getElementById("add_task").value+"("+rate+")";
+      ul.append(l);
+    }
+    
+
+    }
+    function addfix()
+    {
+      var ul=document.getElementById("ul_fix");
+      var info=document.getElementById("info_fix");
+      var start=document.getElementById("start_fix");
+      var end=document.getElementById("end_fix");
+      if(start.value=="" || end.value=="")
+      {
+         alert("Please make sure you have specified Start/End time!");
+      }
+      else
+      {
+            start=start.value;
+            end=end.value;
+            if(info.value!="")
+            {
+            info.value=parseInt(info.value)+1;
+            }
+            else{ info.value=1;}
+            var l=document.createElement("li");
+            l.innerText=document.getElementById("add_fix").value+"["+start+","+end+"]";
+            ul.append(l);
+      }
+      
+        
+    }
+
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+<div class="box box10"></div>
+<div class="box box9"></div>
+<div class="box box8"></div>
+<div class="box box7"></div>
+<div class="box box6"></div>
+<div class="box box5"></div>
+<div class="box box4"></div>
+<div class="box box3"></div>
+<div class="box box2"></div>
+<div class="box box1"></div>
+<div class="box box0"></div>
+<div style="position: absolute;">
+  <div>
+     {{alert|safe}}
+      <input id="add_task">
+      <div class="star-rating" id="rate_task">
+         <input type="radio" id="5-stars" name="rating" value="5" />
+         <label for="5-stars" class="star">&#9733;</label>
+         <input type="radio" id="4-stars" name="rating" value="4" />
+         <label for="4-stars" class="star">&#9733;</label>
+         <input type="radio" id="3-stars" name="rating" value="3" />
+         <label for="3-stars" class="star">&#9733;</label>
+         <input type="radio" id="2-stars" name="rating" value="2" />
+         <label for="2-stars" class="star">&#9733;</label>
+         <input type="radio" id="1-star" name="rating" value="1" />
+         <label for="1-star" class="star">&#9733;</label>
+       </div>
+       <br>
+     <button type="button" onclick="additems()">Add Task</button>
+     <ul id="ul_task">
+     </ul><br>
+     <input id="add_fix">
+     <input type="time" id="start_fix">
+     <input type="time" id="end_fix">
+       <br>
+     <button type="button" onclick="addfix()">Add Fixed Tasks</button>
+     <ul id="ul_fix">
+     </ul>
+      <form method="post" action="" id="formid" onsubmit="createinput();">
+      {% csrf_token %}
+      <p>Start of your Day</p> <br>
+      <input type="time" name="start_task"><br>
+      <p>End of Your day</p> <br>
+      <input type="time" name="end_task">
+       <input type="text" id="info" style="display:none" name="no_of_tasks">
+       <input type="text" id="info_fix" style="display:none" name="no_of_fix">
+      <button type="submit"  id="submitbtn" onclick="createinput();"> Submit</button>
+   </form>
+   </div>
+   <div class="container">
+      <h4>Your Schedule:</h4>
+   {{result}}
+   </div>
+   <div>
+      
+   </div>
+</div>
+
+</body>
+</html>
